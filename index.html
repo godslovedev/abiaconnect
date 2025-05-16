@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="download (10).png" type="image/x-icon" />
+  <meta name="description" content="Connect with locals in Abia - post, share, and discover what's happening." />
+  <meta name="keywords" content="Abia Connect, local business, community, services, marketplace" />
+  <meta name="author" content="Abia Connect" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image" href="logo.jpg" />
+    <title>Abia Connect</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <style>
+        :root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --primary-color: #6366f1;
+    --card-bg: #f9f9f9;
+    --border-color: #e5e7eb;
+}
+
+body.dark-mode{
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+}
+
+body{
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 5%;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav ul{
+    display: flex;
+    font-size: 17px;
+    display: flex;
+    justify-content: right;
+    align-items: center
+  }
+ul li{
+    list-style: none;
+    margin: 0 1.5rem;
+    color: white;
+    font-weight: 500;
+}
+  ul li button{
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    color: white;   
+    border-radius: 8px;
+    margin: 0 1.5rem;
+    font-weight: 500;   
+    background-color: rgb(60, 110, 14);
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+ul li a:hover{
+    color: #0f172a;
+}
+
+
+
+.sign{
+    margin-left: 100px;
+}
+
+.theme-toogle{
+    padding: 0.6rem 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.theme-toogle:hover{
+    background-color: #4f46e5;
+}
+
+.hero{
+    padding: 6rem 5% 3rem;
+    text-align: left;
+    display: flex;
+}
+
+.heroes {
+    display: flex;
+    justify-content: space-around;
+    gap: 60px;
+}
+
+.heroes img {
+    width: 800px;
+}
+
+.hero h2{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom:1rem ;
+    color: var(--primary-color);
+}
+
+.hero p{
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+ i{
+    font-size: 40px;
+ }
+
+ i:hover{
+    color: #ff7200;
+ }
+
+ .choose-plan a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+ }
+
+.cta-button{
+    padding: 0.8rem 1.8rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+
+.courses{
+    padding: 4rem 5% 5rem;
+    text-align: center;
+}
+
+.courses h3{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+.abia-updates{
+    padding: 2rem 5%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+}
+
+.img{
+    
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 50%;
+    height: 300px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.course-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+   
+}
+button{
+    background-color: rgb(8, 72, 17);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+.course-card{
+    
+    background-color: rgb(8, 99, 15);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: rgb(240, 238, 238);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.course-card:hover{
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.course-card h4{
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  
+}
+
+.pricing {
+
+    background-color: #f9f9f9;
+   text-align: center;
+}
+
+
+
+.pricing img {
+    width: 70%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 100px;
+}
+
+.pricing-prop {
+    display: flex;   
+}
+
+.pricing h3 {
+    align-items: center;
+
+}
+
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.pricing-card.most-popular {
+    border: 2px solid #6a5acd;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-card p {
+    margin: 0.5rem 0;
+}
+
+.pricing-card .price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.pricing-card .old-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 0.5rem;
+}
+
+.pricing-card .new-price {
+    color: #6a5acd;
+}
+
+.pricing-card.most-popular:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.choose-plan {
+    background-color: #6a5acd;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.choose-plan:hover {
+    background-color: #5a4cb0;
+}
+
+.migration {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2c2c54;
+    color: #fff;
+}
+
+.migration h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.migration p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+.search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 5px 10px;
+  background-color: transparent;
+  width: fit-content;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 5px;
+}
+
+.search button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.search i {
+  font-size: 18px;
+  color: #333;
+}
+.search i:hover {
+  color: #6a5acd;
+}
+
+.migration-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.migration-card {
+    background: #3b3b6d;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.migration-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.migration-card p {
+    font-size: 0.9rem;
+    color: #dcdcdc;
+}
+
+.get-started {
+    background-color: #6a5acd;
+    color: #fff;
+    border: none;
+    padding: 0.79rem 1.7rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+}
+
+.get-started:hover {
+    background-color: #5a4cb0;
+}
+
+.testimonials {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.testimonials h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #6a5acd;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.testimonial-header h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+.testimonial-header p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.rating {
+    font-size: 1.25rem;
+    color: #f4c542;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    color: #6a5acd;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.read-more-stories {
+    background-color: #6a5acd;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+}
+
+.read-more-stories:hover {
+    background-color: #5a4cb0;
+}
+
+.readmi {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+.readmi img {
+    width: 100%;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    height: 12rem;
+}
+.readmi img:active {
+    transform: translateY(-10px);
+}
+.price {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #5a4cb0;
+}
+
+.readmi h2{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    
+}
+
+@media (max-width: 768px) {
+    .hero h2{
+        font-size: 2rem;
+    }
+
+    .courses h3{
+        font-size: 1.5rem;
+    }
+}
+
+
+
+ 
+  @media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 1rem;
+        padding-left: 0;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    .sign {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .heroes {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .heroes img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-grid,
+    .migration-grid,
+    .testimonials-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card,
+    .migration-card,
+    .testimonial-card {
+        width: 90%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-button,
+    .choose-plan,
+    .get-started,
+    .read-more-stories {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+    </style>
+
+    <header class="navbar" style="background-image: url(abiatower.jpg); background-size: cover;    box-shadow: 0 8px 20px rgba(245, 238, 238, 0.5);">
+     <div class="logo">
+        <img src="download (10).png" alt="" width="150px">
+        <h1 style="color: black;" >ABIA CONNECT</h1>
+    </div>    
+    </header>
+    <div class="nav">
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button><i class='bx bx-search'></i></button>
+        </div>
+        <nav>
+            <ul>
+               <li><button><a href="#">Home</a></button></li>
+                <li><button><a href="#">Our Connect</a></button></li>
+                <li><button><a href="#">About</a></button></li>
+                <li><button style="background-color: red;"><a href="#">Emergency Hotline</a></button></li>
+            </ul>
+        </nav>
+    </div>
+   
+
+    <section class="hero" style="   box-shadow: 0 8px 20px rgba(245, 238, 238, 0.5);">
+        <div class="heroes">
+        <div class="hero-content">
+            <h2 style="color: rgb(9, 65, 9);" >Welcome To Our Civic <br> Engagement Platform</h2>
+            <p>inspired by the vision of Dr.Alex Otti, our platform <br> is dedicated to empowering every
+             citizen of Abia state to <br>actively participate in rebuilding and shaping a brighter <br> future.
+             Here, you can share ideas, engage in neaningful <br>discussions with government officials,
+            contribute <br> to budgeting decisions, sign petitions, and stay informed <br> on the latest government
+        projects and initiatives, etc</p>
+        <div class="sign">
+            <button class="choose-plan" style="background-color: rgb(8, 72, 17); margin: 10px;"><a href="https://godslovedev.github.io/abiaco/signup.html">sign up</a></button>
+            <button class="choose-plan" style="background-color: rgb(8, 72, 17); margin: 10px;"><a href="https://godslovedev.github.io/abiaco/signup.prelogin.html">login</a></button>
+            </div>
+    </div>
+    <img src="civic connect.jpg" alt="civic engagement">
+</div>
+    </div>
+    </section>
+
+    <section id="courses" class="courses">
+        <h3>ABIA UPDATES</h3>
+        <div class="abia-updates">
+            <div class="img" style="background-image: url(hackaton.jpg); background-size: cover;">
+                <button>Read More</button>
+            </div>
+            <div class="img" style="background-image: url(digital.jpg); background-size: cover;">
+                <button>Read More</button>
+            </div>     
+        </div>
+    </section>
+
+    <section id="courses" class="courses">
+        <h3>Our Connect</h3>
+        <div class="course-grid">
+            <div class="course-card">
+                <h4>Idea submission</h4>
+                <P>Citizens can submit their ideas,suggestions,feedback for improving government services,policies or initiatives.</P>
+            </div>
+            <div class="course-card">
+                <h4>Petitions</h4>
+                <p>Citizens can create and sign online petitions on issues they care about.</p>
+            </div>
+            <div class="course-card">
+                <h4>Discussions</h4>
+                <p>Citizens are facilitated to open discussions and between citizens and the government.</p>
+            </div>
+            <div class="course-card">
+                <h4>Service Request</h4>
+                <p>Citizens are to submit requests for various goverment services, such as applying for 
+                    permits, reporting issue, or requesting assistance.</p>
+            </div>
+            <div class="course-card">
+                <h4>Surveys And Polls</h4>
+                <p>This enables government to gather feedback, opinions and insights from citizens on 
+                    various topics and issues.</p>
+            </div>
+            <div class="course-card">
+                <h4>Document Libary</h4>
+                <p>This provides citizens with access to download or view documents directly from the state web server</p>
+
+    </section>
+
+    <section id="pricing" class="pricing">
+        <h3>Upcoming Event</h3>
+        <div class="pricing-prop">
+          <div class="img">
+            <img src="hackaton.jpg" alt="hackaton">
+          </div>
+           <p style="font-size: large;">
+            Civic Connect Hackaton is an event that brings <br> together developers, designers, and civic-minded <br> individuals to collaborate on innovative solutions <br> for local government challenges. Participants work in teams to develop software applications, websites,or other digital tools that can enhance civic engagement, improve government services, or address specific community issues.
+           </p>
+        </div>
+        <button>click to Register</button>
+    </section>
+
+    </div>
+    
+</body>
+</html>
